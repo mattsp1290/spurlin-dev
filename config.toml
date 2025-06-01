@@ -1,0 +1,48 @@
+baseURL = 'https://spurlin.dev'
+languageCode = 'en-us'
+title = 'Spurlin.dev - Where the 90s Web Lives On'
+theme = 'neocities-revival' # Future theme
+
+[params]
+  author = "Matt Spurlin"
+  description = "Personal developer site with authentic 90s web aesthetic"
+  copyrightYear = 2025
+  
+  # 90s Features (prepared for future)
+  visitorCounter = true
+  webRing = true
+  guestbook = true
+  underConstruction = false # Will be true during dev
+  
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  mood = "moods" # 90s vibes: "radical", "cyber", "groovy"
+  era = "eras"   # "early-web", "y2k", "web2.0"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Needed for retro HTML tricks
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+  [[menu.main]]
+    name = "Guestbook"
+    url = "/guestbook/"
+    weight = 5
