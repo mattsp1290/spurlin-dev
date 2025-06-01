@@ -1,0 +1,45 @@
+{
+  "files.associations": {
+    "*.yaml": "yaml",
+    "*.yml": "yaml",
+    "*.md": "markdown"
+  },
+  "yaml.schemas": {
+    "./proompts/docs/task-schema.json": ["proompts/tasks.yaml", "proompts/*-tasks.yaml"]
+  },
+  "editor.formatOnSave": true,
+  "editor.rulers": [80, 120],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/public": false,
+    "**/resources": false
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/public/assets": true
+  },
+  "cline.autocomplete.enabled": true,
+  "cline.suggestions.enabled": true,
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    }
+  },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep"
+  },
+  "hugo.server.navigateToChanged": true,
+  "hugo.server.renderToDisk": true
+}
