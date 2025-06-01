@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default "en" }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+
+    <!-- TIC-80 Design System -->
+    {{ $tic80 := resources.Get "scss/tic80/main.scss" | toCSS | minify }}
+    <style>
+        {{ $tic80.Content | safeCSS }}
+    </style>
+
+    <!-- Pixel font - Using a fallback for now -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+        :root {
+            --font-mono: 'Courier Prime', 'Courier New', Courier, monospace;
+            --font-pixel: var(--font-mono);
+            --font-code: var(--font-mono);
+        }
+    </style>
+</head>
+
+<body class="t80-pixel-perfect">
+
+    <!-- TIC-80 Navigation -->
+    <nav class="t80-nav">
+        <a href="{{ .Site.BaseURL }}" class="t80-nav__brand">
+            {{ partial "t80-color.html" (dict "color" "primary" "text" "SPURLIN.DEV" "glow" true) }}
+        </a>
+        <ul class="t80-nav__links">
+            <li><a href="{{ .Site.BaseURL }}" class="t80-nav__link">Home</a></li>
+            <li><a href="#" class="t80-nav__link t80-nav__link--active">Style Guide</a></li>
+            <li><a href="#" class="t80-nav__link">Projects</a></li>
+            <li><a href="#" class="t80-nav__link">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="t80-container">
+
+        <!-- Hero Section -->
+        <section class="t80-center t80-my-lg">
+            <div class="t80-stack t80-text-center">
+                <pre class="t80-ascii t80-glow--primary">
+ _____ ___ ____      ___   ___  
+|_   _|_ _/ ___|__  ( _ ) / _ \ 
+  | |  | | |   |__| / _ \| | | |
+  | |  | | |___    | (_) | |_| |
+  |_| |___\____|    \___/ \___/ 
+                </pre>
+                <h1 class="t80-heading--h1">{{ .Title }}</h1>
+                <p class="t80-text t80-text--large t80-text--accent">{{ .Params.subtitle }}</p>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <article class="t80-stack">
+            {{ .Content }}
+        </article>
+
+        <!-- Footer -->
+        <footer class="t80-panel t80-my-lg t80-text-center">
+            <p class="t80-text t80-text--muted">
+                Built with {{ partial "t80-color.html" (dict "color" "red" "text" "♥") }}
+                using the TIC-80 design system
+            </p>
+            <p class="t80-text t80-text--small">
+                {{ partial "t80-color.html" (dict "color" "primary" "text" "16 colors. Infinite possibilities.") }}
+            </p>
+        </footer>
+    </main>
+
+    <!-- Demo Interactions (Optional JavaScript) -->
+    <script>
+        // Add some TIC-80 style interactions
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add click sound effect placeholders
+            const buttons = document.querySelectorAll('.t80-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Here you could add TIC-80 sound effects
+                    console.log('🎮 Button clicked with TIC-80 style!');
+                });
+            });
+
+            // Console welcome message
+            console.log(`
+%c🎮 TIC-80 Design System Loaded!
+%cWelcome to the fantasy console web.
+%c16 colors. Infinite possibilities.
+            `,
+                'color: #a7f070; font-size: 16px; font-weight: bold;',
+                'color: #41a6f6; font-size: 12px;',
+                'color: #ffcd75; font-size: 10px;'
+            );
+        });
+    </script>
+</body>
+
+</html>

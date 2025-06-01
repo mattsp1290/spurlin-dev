@@ -1,0 +1,224 @@
+/* 🎮 TIC-80 Design System Variables
+ * The Sacred 16-Color Palette + Pixel-Perfect Grid System
+ * "16 colors. Infinite possibilities."
+ */
+
+// ================================
+// 🌈 THE SACRED TIC-80 PALETTE
+// ================================
+:root {
+    /* TIC-80 Color Palette - The 16 Sacred Colors */
+    --t80-black: #000000;
+    /* 0  - Pure darkness */
+    --t80-dark-blue: #1D2B53;
+    /* 1  - Deep ocean */
+    --t80-dark-purple: #7E2553;
+    /* 2  - Royal mystery */
+    --t80-dark-green: #008751;
+    /* 3  - Forest depths */
+    --t80-brown: #AB5236;
+    /* 4  - Earth and wood */
+    --t80-dark-gray: #5F574F;
+    /* 5  - Stone and shadow */
+    --t80-light-gray: #C2C3C7;
+    /* 6  - Fog and mist */
+    --t80-white: #FFF1E8;
+    /* 7  - Not quite white */
+    --t80-red: #FF004D;
+    /* 8  - Danger! Fire! */
+    --t80-orange: #FFA300;
+    /* 9  - Sunset glow */
+    --t80-yellow: #FFEC27;
+    /* 10 - Electric buzz */
+    --t80-green: #00E436;
+    /* 11 - Radioactive */
+    --t80-blue: #29ADFF;
+    /* 12 - Sky and water */
+    --t80-lavender: #83769C;
+    /* 13 - Dreamy haze */
+    --t80-pink: #FF77A8;
+    /* 14 - Bubblegum pop */
+    --t80-peach: #FFCCAA;
+    /* 15 - Skin and sand */
+
+    // ================================
+    // 🎯 SEMANTIC COLOR MAPPINGS
+    // ================================
+    --color-background: var(--t80-black);
+    --color-surface: var(--t80-dark-blue);
+    --color-surface-alt: var(--t80-dark-gray);
+    --color-surface-light: var(--t80-dark-purple);
+    --color-text: var(--t80-white);
+    --color-text-muted: var(--t80-light-gray);
+    --color-text-dim: var(--t80-dark-gray);
+
+    /* Brand Colors - The spurlin.dev Identity */
+    --color-primary: var(--t80-green);
+    /* That hacker green */
+    --color-secondary: var(--t80-pink);
+    /* 90s accent */
+    --color-accent: var(--t80-yellow);
+    /* Attention grabber */
+    --color-tertiary: var(--t80-blue);
+    /* Cool complement */
+
+    /* Semantic States */
+    --color-danger: var(--t80-red);
+    --color-success: var(--t80-green);
+    --color-warning: var(--t80-orange);
+    --color-info: var(--t80-blue);
+
+    /* Special Effects */
+    --color-glow: var(--t80-green);
+    --color-shadow: var(--t80-dark-purple);
+    --color-highlight: var(--t80-yellow);
+    --color-border: var(--t80-blue);
+    --color-border-muted: var(--t80-dark-gray);
+
+    // ================================
+    // 📏 PIXEL-PERFECT SPACING SCALE
+    // ================================
+    /* Based on 8-pixel grid system */
+    --space-1: 8px;
+    /* 1 unit */
+    --space-2: 16px;
+    /* 2 units */
+    --space-3: 24px;
+    /* 3 units */
+    --space-4: 32px;
+    /* 4 units */
+    --space-5: 40px;
+    /* 5 units */
+    --space-6: 48px;
+    /* 6 units */
+    --space-8: 64px;
+    /* 8 units */
+    --space-10: 80px;
+    /* 10 units */
+    --space-12: 96px;
+    /* 12 units */
+    --space-16: 128px;
+    /* 16 units */
+    --space-20: 160px;
+    /* 20 units */
+    --space-24: 192px;
+    /* 24 units */
+    --space-32: 256px;
+    /* 32 units */
+
+    /* Semantic spacing aliases */
+    --space-xs: var(--space-1);
+    /* 8px */
+    --space-sm: var(--space-2);
+    /* 16px */
+    --space-md: var(--space-4);
+    /* 32px */
+    --space-lg: var(--space-8);
+    /* 64px */
+    --space-xl: var(--space-16);
+    /* 128px */
+
+    // ================================
+    // 🔤 TYPOGRAPHY SYSTEM
+    // ================================
+    /* All sizes in multiples of 8 for pixel perfection */
+    --text-size-xs: 8px;
+    /* TIC-80 native size */
+    --text-size-sm: 8px;
+    /* Keep it consistent */
+    --text-size-md: 16px;
+    /* Double size */
+    --text-size-lg: 24px;
+    /* Triple size */
+    --text-size-xl: 32px;
+    /* Quad size */
+    --text-size-2xl: 48px;
+    /* Big headers */
+    --text-size-3xl: 64px;
+    /* Mega headers */
+
+    /* Line heights match pixel grid */
+    --line-height-tight: 1;
+    --line-height-normal: 1.5;
+    /* 12px for 8px font */
+    --line-height-loose: 2;
+    /* 16px for 8px font */
+
+    /* Font stacks */
+    --font-mono: 'TIC-80', 'Courier New', Courier, monospace;
+    --font-pixel: var(--font-mono);
+    --font-code: var(--font-mono);
+
+    // ================================
+    // 📱 RESPONSIVE BREAKPOINTS
+    // ================================
+    /* TIC-80 screen dimensions as inspiration */
+    --breakpoint-xs: 128px;
+    /* 16 * 8px */
+    --breakpoint-sm: 256px;
+    /* 32 * 8px */
+    --breakpoint-md: 512px;
+    /* 64 * 8px */
+    --breakpoint-lg: 768px;
+    /* 96 * 8px */
+    --breakpoint-xl: 1024px;
+    /* 128 * 8px */
+
+    // ================================
+    // 🎬 ANIMATION TIMING
+    // ================================
+    /* TIC-80 runs at 30 FPS, so animations should respect that */
+    --duration-instant: 0ms;
+    --duration-fast: 100ms;
+    /* ~3 frames */
+    --duration-normal: 200ms;
+    /* ~6 frames */
+    --duration-slow: 400ms;
+    /* ~12 frames */
+    --duration-slower: 600ms;
+    /* ~18 frames */
+
+    /* Easing functions - TIC-80 style (no smooth curves!) */
+    --ease-sharp: steps(1, end);
+    --ease-pixelated: steps(4, end);
+    --ease-retro: steps(8, end);
+
+    // ================================
+    // 🖼️ BORDER & SHADOW SYSTEM
+    // ================================
+    --border-width-thin: 1px;
+    --border-width-thick: 2px;
+    --border-width-fat: 4px;
+
+    --border-radius-none: 0px;
+    /* TIC-80 has no rounded corners! */
+    --border-radius-pixel: 1px;
+    /* Barely perceptible */
+
+    /* Shadow offsets on pixel grid */
+    --shadow-sm: 1px 1px 0;
+    --shadow-md: 2px 2px 0;
+    --shadow-lg: 4px 4px 0;
+    --shadow-xl: 8px 8px 0;
+
+    // ================================
+    // 🔧 Z-INDEX SCALE
+    // ================================
+    --z-background: -1;
+    --z-base: 0;
+    --z-surface: 10;
+    --z-overlay: 100;
+    --z-modal: 1000;
+    --z-notification: 9999;
+
+    // ================================
+    // 🎮 SPECIAL TIC-80 EFFECTS
+    // ================================
+    --glow-spread: 8px;
+    --glow-blur: 16px;
+    --pixel-size: 1px;
+
+    /* Image rendering for pixel-perfect graphics */
+    --image-rendering: pixelated;
+    --image-rendering-fallback: -moz-crisp-edges;
+}

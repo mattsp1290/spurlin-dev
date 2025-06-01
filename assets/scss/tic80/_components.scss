@@ -1,0 +1,794 @@
+/* 🎮 TIC-80 Design System Components
+ * Pixel-perfect UI elements for the fantasy console web
+ */
+
+// ================================
+// 🌍 GLOBAL BASE STYLES
+// ================================
+
+html {
+    background: var(--color-background);
+    color: var(--color-text);
+    @include t80-text();
+    @include t80-pixel-perfect();
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    overflow-x: hidden; // Prevent horizontal scroll on pixel effects
+}
+
+* {
+    box-sizing: border-box;
+}
+
+// ================================
+// 🎯 TYPOGRAPHY COMPONENTS
+// ================================
+
+.t80-heading {
+    margin: var(--space-2) 0;
+
+    &--h1 {
+        @include t80-heading(1);
+    }
+
+    &--h2 {
+        @include t80-heading(2);
+    }
+
+    &--h3 {
+        @include t80-heading(3);
+    }
+
+    &--h4 {
+        @include t80-heading(4);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend .t80-heading;
+}
+
+h1 {
+    @extend .t80-heading--h1;
+}
+
+h2 {
+    @extend .t80-heading--h2;
+}
+
+h3 {
+    @extend .t80-heading--h3;
+}
+
+h4 {
+    @extend .t80-heading--h4;
+}
+
+.t80-text {
+    @include t80-text();
+    margin: var(--space-1) 0;
+
+    &--large {
+        font-size: var(--text-size-md);
+    }
+
+    &--small {
+        font-size: var(--text-size-xs);
+    }
+
+    &--muted {
+        color: var(--color-text-muted);
+    }
+
+    &--accent {
+        color: var(--color-accent);
+    }
+
+    &--primary {
+        color: var(--color-primary);
+    }
+
+    &--glow {
+        @include t80-glow();
+    }
+}
+
+.t80-ascii {
+    @include t80-ascii-art();
+    margin: var(--space-2) 0;
+
+    &--blink {
+        @include t80-blink();
+    }
+
+    &--pulse {
+        @include t80-pulse();
+    }
+}
+
+.t80-code {
+    @include t80-code();
+    display: inline-block;
+
+    &--block {
+        display: block;
+        padding: var(--space-2);
+        margin: var(--space-2) 0;
+        overflow-x: auto;
+    }
+}
+
+// ================================
+// 🔘 BUTTON COMPONENTS
+// ================================
+
+.t80-btn {
+    @include t80-button();
+
+    // Button variants
+    &--primary {
+        @include t80-button('primary');
+    }
+
+    &--secondary {
+        @include t80-button('secondary');
+    }
+
+    &--danger {
+        @include t80-button('danger');
+    }
+
+    // Button sizes
+    &--small {
+        padding: calc(var(--space-1) / 2) var(--space-1);
+        font-size: var(--text-size-xs);
+    }
+
+    &--large {
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--text-size-md);
+    }
+
+    // Special effects
+    &--glow {
+        @include t80-border-glow();
+    }
+
+    &--pulse {
+        @include t80-pulse();
+    }
+}
+
+// Button groups
+.t80-btn-group {
+    @include t80-row(0);
+
+    .t80-btn {
+        border-radius: 0;
+
+        &:not(:last-child) {
+            border-right: none;
+        }
+
+        &:first-child {
+            border-top-left-radius: var(--border-radius-pixel);
+        }
+
+        &:last-child {
+            border-top-right-radius: var(--border-radius-pixel);
+        }
+    }
+}
+
+// ================================
+// 📱 CARD COMPONENTS
+// ================================
+
+.t80-card {
+    @include t80-card();
+    margin: var(--space-2) 0;
+
+    &__header {
+        @include t80-heading(3);
+        margin: 0 0 var(--space-2) 0;
+        padding-bottom: var(--space-1);
+        border-bottom: var(--border-width-thin) solid var(--color-border-muted);
+    }
+
+    &__body {
+        margin: var(--space-2) 0;
+    }
+
+    &__footer {
+        margin-top: var(--space-2);
+        padding-top: var(--space-1);
+        border-top: var(--border-width-thin) solid var(--color-border-muted);
+        @include t80-row();
+        justify-content: flex-end;
+    }
+
+    // Card variants
+    &--raised {
+        @include t80-shadow(4px, 4px);
+
+        &:hover {
+            @include t80-shadow(6px, 6px);
+            transform: translate(-2px, -2px);
+        }
+    }
+
+    &--glow {
+        @include t80-border-glow();
+    }
+
+    &--inset {
+        @include t80-inset-border();
+        background: var(--color-background);
+    }
+}
+
+// ================================
+// 📝 FORM COMPONENTS
+// ================================
+
+.t80-input {
+    @include t80-input();
+    width: 100%;
+    margin: var(--space-1) 0;
+
+    &--small {
+        padding: calc(var(--space-1) / 2);
+        font-size: var(--text-size-xs);
+    }
+
+    &--large {
+        padding: var(--space-2);
+        font-size: var(--text-size-md);
+    }
+}
+
+.t80-textarea {
+    @extend .t80-input;
+    resize: vertical;
+    min-height: calc(var(--space-1) * 6);
+    font-family: var(--font-mono);
+}
+
+.t80-select {
+    @extend .t80-input;
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--color-text) 50%),
+        linear-gradient(135deg, var(--color-text) 50%, transparent 50%);
+    background-position:
+        calc(100% - var(--space-1)) center,
+        calc(100% - calc(var(--space-1) / 2)) center;
+    background-size:
+        calc(var(--space-1) / 2) calc(var(--space-1) / 2),
+        calc(var(--space-1) / 2) calc(var(--space-1) / 2);
+    background-repeat: no-repeat;
+    padding-right: var(--space-3);
+    appearance: none;
+}
+
+.t80-checkbox,
+.t80-radio {
+    appearance: none;
+    width: var(--space-2);
+    height: var(--space-2);
+    background: var(--color-surface);
+    @include t80-border();
+    position: relative;
+    margin-right: var(--space-1);
+
+    &:checked {
+        background: var(--color-primary);
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            right: 1px;
+            bottom: 1px;
+            background: var(--color-background);
+        }
+    }
+
+    &:focus {
+        @include t80-border(var(--color-accent));
+    }
+}
+
+.t80-radio {
+    border-radius: 50%;
+
+    &:checked::after {
+        border-radius: 50%;
+    }
+}
+
+.t80-label {
+    @include t80-text();
+    @include t80-row();
+    cursor: pointer;
+    margin: var(--space-1) 0;
+
+    &:hover {
+        color: var(--color-primary);
+    }
+}
+
+// ================================
+// 🧭 NAVIGATION COMPONENTS
+// ================================
+
+.t80-nav {
+    background: var(--color-surface);
+    @include t80-border(var(--color-border), var(--border-width-thin));
+    padding: var(--space-1) var(--space-2);
+
+    &__brand {
+        @include t80-heading(3);
+        color: var(--color-primary);
+        text-decoration: none;
+        @include t80-glow(var(--color-primary));
+    }
+
+    &__links {
+        @include t80-row();
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
+        @include t80-text();
+        color: var(--color-text);
+        text-decoration: none;
+        padding: var(--space-1) var(--space-2);
+        @include t80-hover-lift();
+
+        &:hover {
+            color: var(--color-primary);
+            @include t80-glow(var(--color-primary), 4px);
+        }
+
+        &--active {
+            color: var(--color-accent);
+            background: var(--color-surface-alt);
+            @include t80-border(var(--color-accent));
+        }
+    }
+}
+
+// ================================
+// 📊 DATA DISPLAY COMPONENTS
+// ================================
+
+.t80-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    @include t80-border();
+    background: var(--color-surface);
+
+    th,
+    td {
+        @include t80-text();
+        padding: var(--space-1);
+        border-right: var(--border-width-thin) solid var(--color-border-muted);
+        border-bottom: var(--border-width-thin) solid var(--color-border-muted);
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    th {
+        background: var(--color-surface-alt);
+        color: var(--color-primary);
+        @include t80-text-shadow();
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+        background: var(--color-surface-light);
+    }
+}
+
+.t80-badge {
+    @include t80-text(var(--text-size-xs));
+    padding: calc(var(--space-1) / 2) var(--space-1);
+    background: var(--color-primary);
+    color: var(--color-background);
+    @include t80-border(var(--color-primary));
+    display: inline-block;
+
+    &--secondary {
+        background: var(--color-secondary);
+        @include t80-border(var(--color-secondary));
+    }
+
+    &--danger {
+        background: var(--color-danger);
+        @include t80-border(var(--color-danger));
+    }
+
+    &--glow {
+        @include t80-glow();
+    }
+}
+
+// ================================
+// 🎪 LAYOUT COMPONENTS
+// ================================
+
+.t80-container {
+    @include t80-container();
+}
+
+.t80-grid {
+    @include t80-grid-responsive();
+}
+
+.t80-stack {
+    @include t80-stack();
+}
+
+.t80-row {
+    @include t80-row();
+}
+
+.t80-center {
+    @include t80-flex-center();
+}
+
+.t80-panel {
+    @include t80-panel();
+    padding: var(--space-2);
+    margin: var(--space-2) 0;
+
+    &--inset {
+        @extend .t80-panel;
+        @include t80-inset-border();
+        background: var(--color-background);
+    }
+
+    &--raised {
+        @extend .t80-panel;
+        @include t80-shadow(4px, 4px);
+        background: var(--color-surface-light);
+    }
+}
+
+// ================================
+// ✨ SPECIAL EFFECTS
+// ================================
+
+.t80-glow {
+    @include t80-glow();
+
+    &--primary {
+        @include t80-glow(var(--color-primary));
+    }
+
+    &--secondary {
+        @include t80-glow(var(--color-secondary));
+    }
+
+    &--accent {
+        @include t80-glow(var(--color-accent));
+    }
+
+    &--danger {
+        @include t80-glow(var(--color-danger));
+    }
+}
+
+.t80-pulse {
+    @include t80-pulse();
+
+    &--primary {
+        @include t80-pulse(var(--color-primary));
+    }
+
+    &--secondary {
+        @include t80-pulse(var(--color-secondary));
+    }
+
+    &--accent {
+        @include t80-pulse(var(--color-accent));
+    }
+}
+
+.t80-blink {
+    @include t80-blink();
+}
+
+.t80-float {
+    @include t80-float();
+}
+
+.t80-hover-lift {
+    @include t80-hover-lift();
+}
+
+// ================================
+// 🎨 UTILITY CLASSES
+// ================================
+
+// Spacing utilities
+@each $name, $value in ('xs': var(--space-xs),
+    'sm': var(--space-sm),
+    'md': var(--space-md),
+    'lg': var(--space-lg),
+    'xl': var(--space-xl)) {
+    .t80-m-#{$name} {
+        margin: #{$value};
+    }
+
+    .t80-mt-#{$name} {
+        margin-top: #{$value};
+    }
+
+    .t80-mr-#{$name} {
+        margin-right: #{$value};
+    }
+
+    .t80-mb-#{$name} {
+        margin-bottom: #{$value};
+    }
+
+    .t80-ml-#{$name} {
+        margin-left: #{$value};
+    }
+
+    .t80-mx-#{$name} {
+        margin-left: #{$value};
+        margin-right: #{$value};
+    }
+
+    .t80-my-#{$name} {
+        margin-top: #{$value};
+        margin-bottom: #{$value};
+    }
+
+    .t80-p-#{$name} {
+        padding: #{$value};
+    }
+
+    .t80-pt-#{$name} {
+        padding-top: #{$value};
+    }
+
+    .t80-pr-#{$name} {
+        padding-right: #{$value};
+    }
+
+    .t80-pb-#{$name} {
+        padding-bottom: #{$value};
+    }
+
+    .t80-pl-#{$name} {
+        padding-left: #{$value};
+    }
+
+    .t80-px-#{$name} {
+        padding-left: #{$value};
+        padding-right: #{$value};
+    }
+
+    .t80-py-#{$name} {
+        padding-top: #{$value};
+        padding-bottom: #{$value};
+    }
+}
+
+// Color utilities
+@each $name, $value in ('primary': var(--color-primary),
+    'secondary': var(--color-secondary),
+    'accent': var(--color-accent),
+    'danger': var(--color-danger),
+    'success': var(--color-success),
+    'warning': var(--color-warning),
+    'info': var(--color-info),
+    'text': var(--color-text),
+    'text-muted': var(--color-text-muted)) {
+    .t80-text-#{$name} {
+        color: #{$value};
+    }
+
+    .t80-bg-#{$name} {
+        background-color: #{$value};
+    }
+
+    .t80-border-#{$name} {
+        border-color: #{$value};
+    }
+}
+
+// Display utilities
+.t80-hidden {
+    display: none;
+}
+
+.t80-block {
+    display: block;
+}
+
+.t80-inline {
+    display: inline;
+}
+
+.t80-inline-block {
+    display: inline-block;
+}
+
+.t80-flex {
+    display: flex;
+}
+
+.t80-grid {
+    display: grid;
+}
+
+// Position utilities
+.t80-relative {
+    position: relative;
+}
+
+.t80-absolute {
+    position: absolute;
+}
+
+.t80-fixed {
+    position: fixed;
+}
+
+.t80-sticky {
+    position: sticky;
+}
+
+// Text utilities
+.t80-text-left {
+    text-align: left;
+}
+
+.t80-text-center {
+    text-align: center;
+}
+
+.t80-text-right {
+    text-align: right;
+}
+
+.t80-text-uppercase {
+    text-transform: uppercase;
+}
+
+.t80-text-lowercase {
+    text-transform: lowercase;
+}
+
+// Pixel perfect utilities
+.t80-pixel-perfect {
+    @include t80-pixel-perfect();
+}
+
+.t80-no-select {
+    @include t80-no-select();
+}
+
+.t80-clickable {
+    @include t80-clickable();
+}
+
+.t80-screen-reader-only {
+    @include t80-screen-reader-only();
+}
+
+// ================================
+// 🎮 TIC-80 KEYFRAMES
+// ================================
+
+@keyframes t80-blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes t80-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.125);
+    }
+}
+
+@keyframes t80-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-var(--space-1));
+    }
+}
+
+@keyframes t80-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes t80-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes t80-bounce {
+
+    0%,
+    20%,
+    53%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40%,
+    43% {
+        transform: translateY(-var(--space-3));
+    }
+
+    70% {
+        transform: translateY(-var(--space-1));
+    }
+
+    90% {
+        transform: translateY(-var(--space-1));
+    }
+}

@@ -1,0 +1,12 @@
+name = "Neocities Revival"
+license = "MIT"
+licenselink = "https://github.com/spurlin/neocities-revival/LICENSE"
+description = "A nostalgic 90s web aesthetic theme with PICO-8 design system integration"
+homepage = "https://spurlin.dev"
+tags = ["retro", "90s", "neocities", "pico8", "personal", "blog"]
+features = ["responsive", "dark-mode", "animations", "accessibility"]
+min_version = "0.82.0"
+
+[author]
+  name = "Matt Spurlin"
+  homepage = "https://spurlin.dev" 

@@ -1,0 +1,80 @@
+{{ define "main" }}
+<div class="p8-list-page">
+    <header class="p8-list-header">
+        <h1 class="p8-title">{{ .Title }}</h1>
+        {{ if .Description }}
+        <p class="p8-description">{{ .Description }}</p>
+        {{ end }}
+
+        {{ if .Params.summary }}
+        <div class="p8-summary">
+            {{ .Params.summary | markdownify }}
+        </div>
+        {{ end }}
+
+        <div class="p8-list-meta">
+            📝 {{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}
+        </div>
+    </header>
+
+    {{ if .Content }}
+    <div class="p8-list-content">
+        {{ .Content }}
+    </div>
+    {{ end }}
+
+    {{ if .Pages }}
+    <div class="p8-post-list">
+        {{ range .Pages }}
+        <article class="p8-post-item">
+            <header class="p8-post-header">
+                <h2 class="p8-post-title">
+                    <a href="{{ .Permalink }}" class="p8-post-link">{{ .Title }}</a>
+                </h2>
+
+                <div class="p8-post-meta">
+                    {{ if .Date }}
+                    <time class="p8-post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                        📅 {{ .Date.Format "Jan 2, 2006" }}
+                    </time>
+                    {{ end }}
+
+                    {{ if .ReadingTime }}
+                    <span class="p8-post-reading-time">⏱️ {{ .ReadingTime }} min</span>
+                    {{ end }}
+
+                    {{ if .Params.tags }}
+                    <div class="p8-post-tags">
+                        {{ range first 3 .Params.tags }}
+                        <span class="p8-tag">#{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </header>
+
+            {{ if .Summary }}
+            <div class="p8-post-summary">
+                {{ .Summary }}
+                {{ if .Truncated }}
+                <a href="{{ .Permalink }}" class="p8-read-more">Continue reading →</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ template "_internal/pagination.html" . }}
+    {{ end }}
+
+    {{ if eq (len .Pages) 0 }}
+    <div class="p8-empty-state">
+        <div class="p8-empty-icon">📂</div>
+        <h2 class="p8-empty-title">No posts yet</h2>
+        <p class="p8-empty-description">Check back later for updates!</p>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

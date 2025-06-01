@@ -1,0 +1,392 @@
+/* 🎮 PICO-8 Design System Mixins
+ * Reusable styling patterns for the fantasy console web
+ */
+
+// ================================
+// 🖼️ PICO-8 BORDER MIXINS
+// ================================
+
+@mixin p8-border($color: var(--p8-blue), $width: var(--border-width-thick)) {
+    border: $width solid $color;
+    border-radius: var(--border-radius-none); // No round corners in PICO-8!
+}
+
+@mixin p8-border-glow($color: var(--p8-green)) {
+    @include p8-border($color);
+    box-shadow:
+        0 0 var(--glow-spread) $color,
+        inset 0 0 var(--glow-spread) rgba($color, 0.2);
+}
+
+@mixin p8-inset-border($color: var(--p8-dark-gray)) {
+    border: var(--border-width-thick) solid $color;
+    box-shadow: inset var(--shadow-sm) $color;
+}
+
+// ================================
+// 🌟 PICO-8 SHADOW MIXINS
+// ================================
+
+@mixin p8-shadow($x: 2px, $y: 2px, $color: var(--p8-dark-purple)) {
+    box-shadow: $x $y 0 $color;
+}
+
+@mixin p8-shadow-inset($color: var(--p8-black)) {
+    box-shadow: inset var(--shadow-sm) $color;
+}
+
+@mixin p8-text-shadow($color: var(--p8-black)) {
+    text-shadow: 1px 1px 0 $color;
+}
+
+@mixin p8-glow($color: var(--p8-green), $intensity: var(--glow-blur)) {
+    text-shadow:
+        0 0 calc($intensity / 2) $color,
+        0 0 $intensity $color,
+        0 0 calc($intensity * 1.5) $color;
+}
+
+// ================================
+// 🔤 TYPOGRAPHY MIXINS
+// ================================
+
+@mixin p8-text($size: var(--text-size-sm)) {
+    font-family: var(--font-pixel);
+    font-size: $size;
+    line-height: var(--line-height-tight);
+    image-rendering: var(--image-rendering);
+    image-rendering: var(--image-rendering-fallback);
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin p8-heading($level: 1) {
+    @include p8-text();
+
+    @if $level ==1 {
+        font-size: var(--text-size-3xl);
+        @include p8-glow();
+    }
+
+    @else if $level ==2 {
+        font-size: var(--text-size-2xl);
+        color: var(--color-primary);
+    }
+
+    @else if $level ==3 {
+        font-size: var(--text-size-xl);
+        color: var(--color-secondary);
+    }
+
+    @else {
+        font-size: var(--text-size-lg);
+        color: var(--color-text);
+    }
+}
+
+@mixin p8-ascii-art() {
+    @include p8-text();
+    white-space: pre;
+    line-height: 1;
+    color: var(--color-primary);
+    @include p8-glow(var(--color-primary));
+    letter-spacing: 0;
+}
+
+@mixin p8-code() {
+    @include p8-text();
+    background: var(--color-surface);
+    color: var(--color-accent);
+    padding: var(--space-1);
+    @include p8-border(var(--color-border-muted));
+}
+
+// ================================
+// 📏 LAYOUT & GRID MIXINS
+// ================================
+
+@mixin p8-grid($columns: 16) {
+    display: grid;
+    grid-template-columns: repeat($columns, var(--space-1));
+    gap: 0;
+}
+
+@mixin p8-container($max-width: 128) {
+    max-width: calc(#{$max-width} * var(--space-1));
+    margin: 0 auto;
+    padding: 0 var(--space-2);
+}
+
+@mixin p8-flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin p8-stack($gap: var(--space-2)) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin p8-row($gap: var(--space-2)) {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+    align-items: center;
+}
+
+// ================================
+// 🎬 ANIMATION MIXINS
+// ================================
+
+@mixin p8-animate($name, $duration: var(--duration-normal), $timing: var(--ease-sharp)) {
+    animation: $name $duration $timing infinite;
+}
+
+@mixin p8-hover-lift() {
+    transition: transform var(--duration-fast) var(--ease-sharp);
+
+    &:hover {
+        transform: translate(-1px, -1px);
+        @include p8-shadow(3px, 3px);
+    }
+
+    &:active {
+        transform: translate(0, 0);
+        box-shadow: none;
+    }
+}
+
+@mixin p8-pulse($color: var(--color-primary)) {
+    @keyframes p8-pulse-#{unique-id()} {
+
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.7;
+            transform: scale(1.125); // Stay on pixel grid
+        }
+    }
+
+    @include p8-animate(p8-pulse-#{unique-id()}, var(--duration-slow));
+}
+
+@mixin p8-blink() {
+    @keyframes p8-blink {
+
+        0%,
+        50% {
+            opacity: 1;
+        }
+
+        51%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @include p8-animate(p8-blink, 1s);
+}
+
+@mixin p8-float() {
+    @keyframes p8-float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-var(--space-1));
+        }
+    }
+
+    @include p8-animate(p8-float, 2s, ease-in-out);
+}
+
+// ================================
+// 🎮 COMPONENT MIXINS
+// ================================
+
+@mixin p8-button($variant: 'primary') {
+    @include p8-text();
+    padding: var(--space-1) var(--space-2);
+    border: none;
+    cursor: pointer;
+    background: var(--color-surface);
+    color: var(--color-text);
+    @include p8-border();
+    @include p8-hover-lift();
+
+    @if $variant =='primary' {
+        background: var(--color-primary);
+        color: var(--color-background);
+        @include p8-border(var(--color-primary));
+    }
+
+    @else if $variant =='secondary' {
+        background: var(--color-secondary);
+        color: var(--color-background);
+        @include p8-border(var(--color-secondary));
+    }
+
+    @else if $variant =='danger' {
+        background: var(--color-danger);
+        color: var(--color-white);
+        @include p8-border(var(--color-danger));
+    }
+
+    &:focus {
+        outline: var(--border-width-thick) solid var(--color-accent);
+        outline-offset: var(--border-width-thick);
+    }
+
+    &:disabled {
+        background: var(--color-surface-alt);
+        color: var(--color-text-dim);
+        cursor: not-allowed;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+
+@mixin p8-card() {
+    background: var(--color-surface);
+    @include p8-border();
+    @include p8-shadow();
+    padding: var(--space-2);
+
+    &:hover {
+        @include p8-shadow(3px, 3px);
+        transform: translate(-1px, -1px);
+    }
+}
+
+@mixin p8-input() {
+    @include p8-text();
+    padding: var(--space-1);
+    background: var(--color-surface);
+    color: var(--color-text);
+    @include p8-border();
+
+    &:focus {
+        @include p8-border(var(--color-primary));
+        @include p8-glow(var(--color-primary), 4px);
+        outline: none;
+    }
+
+    &::placeholder {
+        color: var(--color-text-muted);
+    }
+}
+
+@mixin p8-panel() {
+    background: var(--color-surface);
+    @include p8-border();
+    @include p8-shadow();
+
+    &--inset {
+        @include p8-inset-border();
+        background: var(--color-background);
+    }
+
+    &--raised {
+        @include p8-shadow(4px, 4px);
+        background: var(--color-surface-light);
+    }
+}
+
+// ================================
+// 🎯 UTILITY MIXINS
+// ================================
+
+@mixin p8-screen-reader-only() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@mixin p8-pixel-perfect() {
+    image-rendering: var(--image-rendering);
+    image-rendering: var(--image-rendering-fallback);
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+@mixin p8-no-select() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin p8-clickable() {
+    cursor: pointer;
+    @include p8-hover-lift();
+}
+
+// ================================
+// 📱 RESPONSIVE MIXINS
+// ================================
+
+@mixin p8-responsive($breakpoint) {
+    @if $breakpoint =='xs' {
+        @media (min-width: var(--breakpoint-xs)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='sm' {
+        @media (min-width: var(--breakpoint-sm)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='md' {
+        @media (min-width: var(--breakpoint-md)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='lg' {
+        @media (min-width: var(--breakpoint-lg)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='xl' {
+        @media (min-width: var(--breakpoint-xl)) {
+            @content;
+        }
+    }
+}
+
+@mixin p8-grid-responsive() {
+    @include p8-grid(16);
+
+    @include p8-responsive('sm') {
+        @include p8-grid(32);
+    }
+
+    @include p8-responsive('md') {
+        @include p8-grid(64);
+    }
+
+    @include p8-responsive('lg') {
+        @include p8-grid(96);
+    }
+
+    @include p8-responsive('xl') {
+        @include p8-grid(128);
+    }
+}

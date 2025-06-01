@@ -1,0 +1,245 @@
+/* 🎮 TIC-80 Design System Variables
+ * SWEETIE-16 Palette + Pixel-Perfect Grid System
+ * "240×136 pixels of retro goodness"
+ */
+
+// ================================
+// 🌈 THE SWEETIE-16 PALETTE
+// ================================
+:root {
+    /* SWEETIE-16 Color Palette - TIC-80's Default */
+    --t80-black: #1a1c2c;
+    /* 0  - Slightly blue-tinted */
+    --t80-purple: #5d275d;
+    /* 1  - Deep purple */
+    --t80-red: #b13e53;
+    /* 2  - Muted red */
+    --t80-orange: #ef7d57;
+    /* 3  - Soft orange */
+    --t80-yellow: #ffcd75;
+    /* 4  - Pastel yellow */
+    --t80-lime: #a7f070;
+    /* 5  - Bright lime */
+    --t80-green: #38b764;
+    /* 6  - Forest green */
+    --t80-dark-cyan: #257179;
+    /* 7  - Deep cyan */
+    --t80-dark-blue: #29366f;
+    /* 8  - Navy blue */
+    --t80-blue: #3b5dc9;
+    /* 9  - Medium blue */
+    --t80-light-blue: #41a6f6;
+    /* 10 - Sky blue */
+    --t80-cyan: #73eff7;
+    /* 11 - Bright cyan */
+    --t80-white: #f4f4f4;
+    /* 12 - Pure white */
+    --t80-light-gray: #94b0c2;
+    /* 13 - Blue-tinted gray */
+    --t80-gray: #566c86;
+    /* 14 - Medium gray */
+    --t80-dark-gray: #333c57;
+    /* 15 - Dark blue-gray */
+
+    // ================================
+    // 🎯 SEMANTIC COLOR MAPPINGS
+    // ================================
+    --color-background: var(--t80-black);
+    --color-surface: var(--t80-dark-blue);
+    --color-surface-alt: var(--t80-dark-gray);
+    --color-surface-light: var(--t80-gray);
+    --color-text: var(--t80-white);
+    --color-text-muted: var(--t80-light-gray);
+    --color-text-dim: var(--t80-gray);
+
+    /* Brand Colors - The spurlin.dev Identity */
+    --color-primary: var(--t80-lime);
+    /* Bright hacker green */
+    --color-secondary: var(--t80-cyan);
+    /* Cool 90s accent */
+    --color-accent: var(--t80-yellow);
+    /* Attention grabber */
+    --color-tertiary: var(--t80-light-blue);
+    /* Sky complement */
+
+    /* Semantic States */
+    --color-danger: var(--t80-red);
+    --color-success: var(--t80-green);
+    --color-warning: var(--t80-orange);
+    --color-info: var(--t80-light-blue);
+
+    /* Special Effects */
+    --color-glow: var(--t80-lime);
+    --color-shadow: var(--t80-purple);
+    --color-highlight: var(--t80-yellow);
+    --color-border: var(--t80-blue);
+    --color-border-muted: var(--t80-gray);
+
+    /* Compatibility Layer for Missing PICO-8 Colors */
+    --compat-brown: var(--t80-orange);
+    /* No brown in SWEETIE-16 */
+    --compat-pink: var(--t80-red);
+    /* No pink, use red */
+    --compat-peach: var(--t80-yellow);
+    /* No peach, use yellow */
+    --compat-indigo: var(--t80-gray);
+    /* No indigo, use gray */
+
+    // ================================
+    // 📐 TIC-80 SCREEN DIMENSIONS
+    // ================================
+    --screen-width: 240px;
+    --screen-height: 136px;
+    --aspect-ratio: 1.76;
+
+    // ================================
+    // 📏 PIXEL-PERFECT SPACING SCALE
+    // ================================
+    /* Based on 8-pixel grid system */
+    --space-1: 8px;
+    /* 1 unit */
+    --space-2: 16px;
+    /* 2 units */
+    --space-3: 24px;
+    /* 3 units */
+    --space-4: 32px;
+    /* 4 units */
+    --space-5: 40px;
+    /* 5 units */
+    --space-6: 48px;
+    /* 6 units */
+    --space-8: 64px;
+    /* 8 units */
+    --space-10: 80px;
+    /* 10 units */
+    --space-12: 96px;
+    /* 12 units */
+    --space-16: 128px;
+    /* 16 units */
+    --space-20: 160px;
+    /* 20 units */
+    --space-24: 192px;
+    /* 24 units */
+    --space-30: 240px;
+    /* 30 units - TIC-80 width */
+    --space-32: 256px;
+    /* 32 units */
+
+    /* Semantic spacing aliases */
+    --space-xs: var(--space-1);
+    /* 8px */
+    --space-sm: var(--space-2);
+    /* 16px */
+    --space-md: var(--space-4);
+    /* 32px */
+    --space-lg: var(--space-8);
+    /* 64px */
+    --space-xl: var(--space-16);
+    /* 128px */
+
+    // ================================
+    // 🔤 TYPOGRAPHY SYSTEM
+    // ================================
+    /* All sizes in multiples of 8 for pixel perfection */
+    --text-size-xs: 8px;
+    /* TIC-80 native size */
+    --text-size-sm: 8px;
+    /* Keep it consistent */
+    --text-size-md: 16px;
+    /* Double size */
+    --text-size-lg: 24px;
+    /* Triple size */
+    --text-size-xl: 32px;
+    /* Quad size */
+    --text-size-2xl: 48px;
+    /* Big headers */
+    --text-size-3xl: 64px;
+    /* Mega headers */
+
+    /* Line heights match pixel grid */
+    --line-height-tight: 1;
+    --line-height-normal: 1.5;
+    /* 12px for 8px font */
+    --line-height-loose: 2;
+    /* 16px for 8px font */
+
+    /* Font stacks */
+    --font-mono: 'TIC-80', 'Courier New', Courier, monospace;
+    --font-pixel: var(--font-mono);
+    --font-code: var(--font-mono);
+
+    // ================================
+    // 📱 RESPONSIVE BREAKPOINTS
+    // ================================
+    /* TIC-80 screen dimensions as inspiration */
+    --breakpoint-xs: 240px;
+    /* 1x TIC-80 width */
+    --breakpoint-sm: 480px;
+    /* 2x TIC-80 width */
+    --breakpoint-md: 720px;
+    /* 3x TIC-80 width */
+    --breakpoint-lg: 960px;
+    /* 4x TIC-80 width */
+    --breakpoint-xl: 1200px;
+    /* 5x TIC-80 width */
+    --breakpoint-2xl: 1440px;
+    /* 6x TIC-80 width */
+
+    // ================================
+    // 🎬 ANIMATION TIMING
+    // ================================
+    /* TIC-80 runs at 60 FPS, animations should respect that */
+    --duration-instant: 0ms;
+    --duration-fast: 100ms;
+    /* ~6 frames */
+    --duration-normal: 200ms;
+    /* ~12 frames */
+    --duration-slow: 400ms;
+    /* ~24 frames */
+    --duration-slower: 600ms;
+    /* ~36 frames */
+
+    /* Easing functions - TIC-80 style (no smooth curves!) */
+    --ease-sharp: steps(1, end);
+    --ease-pixelated: steps(4, end);
+    --ease-retro: steps(8, end);
+
+    // ================================
+    // 🖼️ BORDER & SHADOW SYSTEM
+    // ================================
+    --border-width-thin: 1px;
+    --border-width-thick: 2px;
+    --border-width-fat: 4px;
+
+    --border-radius-none: 0px;
+    /* TIC-80 has no rounded corners! */
+    --border-radius-pixel: 1px;
+    /* Barely perceptible */
+
+    /* Shadow offsets on pixel grid */
+    --shadow-sm: 1px 1px 0;
+    --shadow-md: 2px 2px 0;
+    --shadow-lg: 4px 4px 0;
+    --shadow-xl: 8px 8px 0;
+
+    // ================================
+    // 🔧 Z-INDEX SCALE
+    // ================================
+    --z-background: -1;
+    --z-base: 0;
+    --z-surface: 10;
+    --z-overlay: 100;
+    --z-modal: 1000;
+    --z-notification: 9999;
+
+    // ================================
+    // 🎮 SPECIAL TIC-80 EFFECTS
+    // ================================
+    --glow-spread: 8px;
+    --glow-blur: 16px;
+    --pixel-size: 1px;
+
+    /* Image rendering for pixel-perfect graphics */
+    --image-rendering: pixelated;
+    --image-rendering-fallback: -moz-crisp-edges;
+}

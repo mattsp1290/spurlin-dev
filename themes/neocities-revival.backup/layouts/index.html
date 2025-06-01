@@ -1,0 +1,138 @@
+{{ define "main" }}
+<div class="p8-homepage">
+    <!-- Hero Section -->
+    <section class="p8-hero">
+        <div class="p8-hero-content">
+            <h1 class="p8-hero-title p8-color-cycle">{{ .Site.Title }}</h1>
+            <p class="p8-hero-subtitle">{{ .Site.Params.description | default "Welcome to the retro web!" }}</p>
+
+            <!-- Under Construction Banner (Optional) -->
+            {{ if .Site.Params.underConstruction }}
+            <div class="p8-construction-banner">
+                <img src="/images/gifs/under-construction.gif" alt="Under Construction">
+                <span class="p8-blink">🚧 Site Under Construction 🚧</span>
+            </div>
+            {{ end }}
+
+            <!-- Quick Navigation -->
+            <div class="p8-hero-nav">
+                <a href="/blog/" class="p8-button p8-button-primary">📝 Blog</a>
+                <a href="/projects/" class="p8-button p8-button-secondary">🚀 Projects</a>
+                <a href="/about/" class="p8-button p8-button-accent">👋 About</a>
+            </div>
+        </div>
+
+        <!-- Retro ASCII Art -->
+        <div class="p8-ascii-art">
+            <pre class="p8-ascii">
+    ░░░░░░░░░░░░░░░░░░░░
+    ░  PICO-8 WEB v1.0  ░
+    ░    GAME  READY    ░
+    ░░░░░░░░░░░░░░░░░░░░
+      </pre>
+        </div>
+    </section>
+
+    <!-- Latest Posts -->
+    {{ $recentPosts := where .Site.RegularPages "Section" "blog" | first 5 }}
+    {{ if $recentPosts }}
+    <section class="p8-recent-posts">
+        <h2 class="p8-section-title">📰 Latest Posts</h2>
+        <div class="p8-post-grid">
+            {{ range $recentPosts }}
+            <article class="p8-post-card">
+                <header class="p8-post-card-header">
+                    <h3 class="p8-post-card-title">
+                        <a href="{{ .Permalink }}" class="p8-post-card-link">{{ .Title }}</a>
+                    </h3>
+                    <time class="p8-post-card-date">{{ .Date.Format "Jan 2" }}</time>
+                </header>
+
+                {{ if .Summary }}
+                <p class="p8-post-card-summary">{{ .Summary | truncate 120 }}</p>
+                {{ end }}
+
+                <footer class="p8-post-card-footer">
+                    <a href="{{ .Permalink }}" class="p8-read-more-small">Read more →</a>
+                </footer>
+            </article>
+            {{ end }}
+        </div>
+        <div class="p8-view-all">
+            <a href="/blog/" class="p8-button p8-button-outline">View All Posts →</a>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Featured Projects -->
+    {{ $featuredProjects := where .Site.RegularPages "Section" "projects" | where ".Params.featured" "eq" true | first 3
+    }}
+    {{ if $featuredProjects }}
+    <section class="p8-featured-projects">
+        <h2 class="p8-section-title">🚀 Featured Projects</h2>
+        <div class="p8-project-grid">
+            {{ range $featuredProjects }}
+            <div class="p8-project-card">
+                {{ if .Params.image }}
+                <div class="p8-project-image">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" class="p8-pixel-image">
+                </div>
+                {{ end }}
+
+                <div class="p8-project-content">
+                    <h3 class="p8-project-title">
+                        <a href="{{ .Permalink }}" class="p8-project-link">{{ .Title }}</a>
+                    </h3>
+                    <p class="p8-project-description">{{ .Summary | truncate 100 }}</p>
+
+                    {{ if .Params.tech }}
+                    <div class="p8-project-tech">
+                        {{ range .Params.tech }}
+                        <span class="p8-tech-tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="p8-view-all">
+            <a href="/projects/" class="p8-button p8-button-outline">View All Projects →</a>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Retro Guestbook (Optional) -->
+    {{ if .Site.Params.enableGuestbook }}
+    <section class="p8-guestbook">
+        <h2 class="p8-section-title">📖 Guestbook</h2>
+        <div class="p8-guestbook-widget">
+            <p>Sign my guestbook! (Integration TBD)</p>
+            <a href="/guestbook/" class="p8-button p8-button-retro">✍️ Sign Guestbook</a>
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Stats Section -->
+    <section class="p8-stats">
+        <div class="p8-stats-grid">
+            <div class="p8-stat">
+                <div class="p8-stat-number">{{ len (where .Site.RegularPages "Section" "blog") }}</div>
+                <div class="p8-stat-label">Blog Posts</div>
+            </div>
+            <div class="p8-stat">
+                <div class="p8-stat-number">{{ len (where .Site.RegularPages "Section" "projects") }}</div>
+                <div class="p8-stat-label">Projects</div>
+            </div>
+            <div class="p8-stat">
+                <div class="p8-stat-number">{{ .Site.Params.visitorCount | default "1337" }}</div>
+                <div class="p8-stat-label">Visitors</div>
+            </div>
+            <div class="p8-stat">
+                <div class="p8-stat-number">{{ now.Year }}</div>
+                <div class="p8-stat-label">Current Year</div>
+            </div>
+        </div>
+    </section>
+</div>
+{{ end }}

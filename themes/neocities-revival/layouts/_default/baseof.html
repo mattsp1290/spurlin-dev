@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default " en" }}">
+
+<head>
+    {{ partial "head.html" . }}
+    <!-- PICO-8 Design System -->
+    {{ $style := resources.Get "scss/main.scss" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</head>
+
+<body class="p8-pixel-perfect retro-mode">
+    <!-- Nostalgic Structure -->
+    {{ partial "header.html" . }}
+
+    <main class="p8-container">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+    {{ partial "retro-effects.html" . }}
+</body>
+
+</html>

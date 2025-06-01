@@ -1,0 +1,42 @@
+{{/* 🎮 TIC-80 Color Utility Partial
+Usage: {{ partial "t80-color.html" (dict "color" "lime" "text" "Hello World!") }}
+Available colors: black, purple, red, orange, yellow, lime, green, dark-cyan,
+dark-blue, blue, light-blue, cyan, white, light-gray, gray, dark-gray
+*/}}
+
+{{ $color := .color | default "white" }}
+{{ $text := .text | default "" }}
+{{ $class := .class | default "" }}
+{{ $glow := .glow | default false }}
+
+{{ $colorMap := dict
+"black" "var(--t80-black)"
+"purple" "var(--t80-purple)"
+"red" "var(--t80-red)"
+"orange" "var(--t80-orange)"
+"yellow" "var(--t80-yellow)"
+"lime" "var(--t80-lime)"
+"green" "var(--t80-green)"
+"dark-cyan" "var(--t80-dark-cyan)"
+"dark-blue" "var(--t80-dark-blue)"
+"blue" "var(--t80-blue)"
+"light-blue" "var(--t80-light-blue)"
+"cyan" "var(--t80-cyan)"
+"white" "var(--t80-white)"
+"light-gray" "var(--t80-light-gray)"
+"gray" "var(--t80-gray)"
+"dark-gray" "var(--t80-dark-gray)"
+"primary" "var(--color-primary)"
+"secondary" "var(--color-secondary)"
+"accent" "var(--color-accent)"
+"danger" "var(--color-danger)"
+"success" "var(--color-success)"
+"warning" "var(--color-warning)"
+"info" "var(--color-info)"
+}}
+
+{{ $finalColor := index $colorMap $color | default "var(--t80-white)" }}
+{{ $glowClass := cond $glow "t80-glow" "" }}
+{{ $finalClass := printf "%s %s" $class $glowClass | strings.TrimSpace }}
+
+<span style="color: {{ $finalColor }};" class="{{ $finalClass }}">{{ $text }}</span>

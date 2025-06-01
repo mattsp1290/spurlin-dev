@@ -1,0 +1,20 @@
+{{ $lang := .Get "lang" | default "text" }}
+<div class="t80-code-block">
+    <div class="t80-code-header">
+        <span class="t80-code-lang">{{ $lang }}</span>
+        <button class="t80-code-copy" onclick="copyCode(this)">📋 Copy</button>
+    </div>
+    <pre class="t80-code"><code class="language-{{ $lang }}">{{ .Inner }}</code></pre>
+</div>
+
+<script>
+    function copyCode(button) {
+        const code = button.parentElement.nextElementSibling.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            button.textContent = '✅ Copied!';
+            setTimeout(() => {
+                button.textContent = '📋 Copy';
+            }, 2000);
+        });
+    }
+</script>

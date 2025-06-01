@@ -1,0 +1,30 @@
+/* 🎮 TIC-80 Design System
+ * =========================
+ * Fantasy console aesthetics for the modern web
+ * 240×136 pixels of retro goodness
+ *
+ * SWEETIE-16 Palette by GrafxKid
+ * https://lospec.com/palette-list/sweetie-16
+ * 
+ * Based on TIC-80 by Nesbox
+ * https://tic80.com/
+ *
+ * Usage:
+ * @import "tic80/main";
+ */
+
+// Import order matters!
+@import 'variables'; // TIC-80 colors, spacing, typography
+@import 'mixins'; // Reusable patterns
+@import 'components'; // UI components
+
+/* 
+ * TIC-80 Design Philosophy:
+ * - Embrace the 240×136 widescreen format
+ * - Respect the SWEETIE-16 palette
+ * - Keep animations at 60 FPS
+ * - Maintain pixel-perfect rendering
+ * - No smooth curves or gradients
+ *
+ * "Fantasy consoles teach us that constraints spark creativity"
+ */

@@ -1,0 +1,43 @@
+<header class="p8-header">
+    <div class="p8-container">
+        <nav class="p8-nav">
+            <!-- Site Title with PICO-8 aesthetic -->
+            <div class="p8-nav-brand">
+                <a href="{{ .Site.BaseURL }}" class="p8-nav-logo">
+                    <span class="p8-pixel-text">{{ .Site.Title }}</span>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="p8-nav-menu">
+                <ul class="p8-nav-list">
+                    <li class="p8-nav-item">
+                        <a href="{{ .Site.BaseURL }}" class="p8-nav-link {{ if .IsHome }}p8-active{{ end }}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="p8-nav-item">
+                        <a href="/blog/" class="p8-nav-link {{ if eq .Section " blog" }}p8-active{{ end }}">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="p8-nav-item">
+                        <a href="/projects/" class="p8-nav-link {{ if eq .Section " projects" }}p8-active{{ end }}">
+                            Projects
+                        </a>
+                    </li>
+                    <li class="p8-nav-item">
+                        <a href="/about/" class="p8-nav-link {{ if eq .Title " About" }}p8-active{{ end }}">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Retro Web Badge -->
+            <div class="p8-nav-badge">
+                <img src="/images/badges/made-with-pico8.gif" alt="Made with PICO-8" class="p8-badge">
+            </div>
+        </nav>
+    </div>
+</header>

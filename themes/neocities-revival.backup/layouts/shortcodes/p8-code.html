@@ -1,0 +1,20 @@
+{{ $lang := .Get "lang" | default "text" }}
+<div class="p8-code-block">
+    <div class="p8-code-header">
+        <span class="p8-code-lang">{{ $lang }}</span>
+        <button class="p8-code-copy" onclick="copyCode(this)">📋 Copy</button>
+    </div>
+    <pre class="p8-code"><code class="language-{{ $lang }}">{{ .Inner }}</code></pre>
+</div>
+
+<script>
+    function copyCode(button) {
+        const code = button.parentElement.nextElementSibling.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            button.textContent = '✅ Copied!';
+            setTimeout(() => {
+                button.textContent = '📋 Copy';
+            }, 2000);
+        });
+    }
+</script>

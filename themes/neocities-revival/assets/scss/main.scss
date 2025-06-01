@@ -1,0 +1,31 @@
+/* 🎮 Neocities Revival Theme
+ * Bringing TIC-80 aesthetics to 90s web nostalgia
+ * Master theme stylesheet combining TIC-80 + Retro enhancements
+ */
+
+// 1. TIC-80 Foundation (our completed system)
+@import "tic80/main";
+
+// 2. Retro Web Enhancements (to be created)
+// @import "retro/animations";    // Marquee, blink, starfield
+// @import "retro/backgrounds";   // Tiled patterns, gradients
+// @import "retro/badges";        // 88x31 web badges
+// @import "retro/gifs";          // Animated GIF integration
+// @import "retro/visitor";       // Counter styling
+// @import "retro/webring";       // Web ring navigation
+
+// 3. Layout Overrides (to be created)
+// @import "layout/header";       // Site navigation
+// @import "layout/footer";       // Web rings & badges
+// @import "layout/content";      // Content area styling
+
+/* 🚀 Theme-specific utilities and overrides */
+.retro-mode {
+    // Additional 90s-specific styling will go here
+}
+
+.t80-pixel-perfect {
+    // Ensure crisp pixel rendering
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}

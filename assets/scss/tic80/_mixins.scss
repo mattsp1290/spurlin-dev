@@ -1,0 +1,409 @@
+/* 🎮 TIC-80 Design System Mixins
+ * Reusable styling patterns for the fantasy console web
+ */
+
+// ================================
+// 🖼️ TIC-80 BORDER MIXINS
+// ================================
+
+@mixin t80-border($color: var(--t80-blue), $width: var(--border-width-thick)) {
+    border: $width solid $color;
+    border-radius: var(--border-radius-none); // No round corners in TIC-80!
+}
+
+@mixin t80-border-glow($color: var(--t80-lime)) {
+    @include t80-border($color);
+    box-shadow:
+        0 0 var(--glow-spread) $color,
+        inset 0 0 var(--glow-spread) rgba($color, 0.2);
+}
+
+@mixin t80-inset-border($color: var(--t80-dark-gray)) {
+    border: var(--border-width-thick) solid $color;
+    box-shadow: inset var(--shadow-sm) $color;
+}
+
+// ================================
+// 🌟 TIC-80 SHADOW MIXINS
+// ================================
+
+@mixin t80-shadow($x: 2px, $y: 2px, $color: var(--t80-purple)) {
+    box-shadow: $x $y 0 $color;
+}
+
+@mixin t80-shadow-inset($color: var(--t80-black)) {
+    box-shadow: inset var(--shadow-sm) $color;
+}
+
+@mixin t80-text-shadow($color: var(--t80-black)) {
+    text-shadow: 1px 1px 0 $color;
+}
+
+@mixin t80-glow($color: var(--t80-lime), $intensity: var(--glow-blur)) {
+    text-shadow:
+        0 0 calc($intensity / 2) $color,
+        0 0 $intensity $color,
+        0 0 calc($intensity * 1.5) $color;
+}
+
+// ================================
+// 🔤 TYPOGRAPHY MIXINS
+// ================================
+
+@mixin t80-text($size: var(--text-size-sm)) {
+    font-family: var(--font-pixel);
+    font-size: $size;
+    line-height: var(--line-height-tight);
+    image-rendering: var(--image-rendering);
+    image-rendering: var(--image-rendering-fallback);
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin t80-heading($level: 1) {
+    @include t80-text();
+
+    @if $level ==1 {
+        font-size: var(--text-size-3xl);
+        @include t80-glow();
+    }
+
+    @else if $level ==2 {
+        font-size: var(--text-size-2xl);
+        color: var(--color-primary);
+    }
+
+    @else if $level ==3 {
+        font-size: var(--text-size-xl);
+        color: var(--color-secondary);
+    }
+
+    @else {
+        font-size: var(--text-size-lg);
+        color: var(--color-text);
+    }
+}
+
+@mixin t80-ascii-art() {
+    @include t80-text();
+    white-space: pre;
+    line-height: 1;
+    color: var(--color-primary);
+    @include t80-glow(var(--color-primary));
+    letter-spacing: 0.1em; // Slightly wider for TIC-80's aspect ratio
+}
+
+@mixin t80-code() {
+    @include t80-text();
+    background: var(--color-surface);
+    color: var(--color-accent);
+    padding: var(--space-1);
+    @include t80-border(var(--color-border-muted));
+}
+
+// ================================
+// 📏 LAYOUT & GRID MIXINS
+// ================================
+
+@mixin t80-grid($columns: 30) {
+    // TIC-80 is 240px wide = 30 units of 8px
+    display: grid;
+    grid-template-columns: repeat($columns, var(--space-1));
+    gap: 0;
+}
+
+@mixin t80-container($max-width: 240) {
+    // TIC-80 native width
+    max-width: calc(#{$max-width} * 1px);
+    margin: 0 auto;
+    padding: 0 var(--space-2);
+}
+
+@mixin t80-flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin t80-stack($gap: var(--space-2)) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin t80-row($gap: var(--space-2)) {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+    align-items: center;
+}
+
+// TIC-80 specific aspect ratio container
+@mixin t80-aspect-container() {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.67%; // 136/240 = 0.5667
+
+    >* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// ================================
+// 🎬 ANIMATION MIXINS
+// ================================
+
+@mixin t80-animate($name, $duration: var(--duration-normal), $timing: var(--ease-sharp)) {
+    animation: $name $duration $timing infinite;
+}
+
+@mixin t80-hover-lift() {
+    transition: transform var(--duration-fast) var(--ease-sharp);
+
+    &:hover {
+        transform: translate(-1px, -1px);
+        @include t80-shadow(3px, 3px);
+    }
+
+    &:active {
+        transform: translate(0, 0);
+        box-shadow: none;
+    }
+}
+
+@mixin t80-pulse($color: var(--color-primary)) {
+    @keyframes t80-pulse-#{unique-id()} {
+
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.7;
+            transform: scale(1.125); // Stay on pixel grid
+        }
+    }
+
+    @include t80-animate(t80-pulse-#{unique-id()}, var(--duration-slow));
+}
+
+@mixin t80-blink() {
+    @keyframes t80-blink {
+
+        0%,
+        50% {
+            opacity: 1;
+        }
+
+        51%,
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @include t80-animate(t80-blink, 1s);
+}
+
+@mixin t80-float() {
+    @keyframes t80-float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-var(--space-1));
+        }
+    }
+
+    @include t80-animate(t80-float, 2s, ease-in-out);
+}
+
+// ================================
+// 🎮 COMPONENT MIXINS
+// ================================
+
+@mixin t80-button($variant: 'primary') {
+    @include t80-text();
+    padding: var(--space-1) var(--space-2);
+    border: none;
+    cursor: pointer;
+    background: var(--color-surface);
+    color: var(--color-text);
+    @include t80-border();
+    @include t80-hover-lift();
+
+    @if $variant =='primary' {
+        background: var(--color-primary);
+        color: var(--color-background);
+        @include t80-border(var(--color-primary));
+    }
+
+    @else if $variant =='secondary' {
+        background: var(--color-secondary);
+        color: var(--color-background);
+        @include t80-border(var(--color-secondary));
+    }
+
+    @else if $variant =='danger' {
+        background: var(--color-danger);
+        color: var(--color-white);
+        @include t80-border(var(--color-danger));
+    }
+
+    &:focus {
+        outline: var(--border-width-thick) solid var(--color-accent);
+        outline-offset: var(--border-width-thick);
+    }
+
+    &:disabled {
+        background: var(--color-surface-alt);
+        color: var(--color-text-dim);
+        cursor: not-allowed;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+
+@mixin t80-card() {
+    background: var(--color-surface);
+    @include t80-border();
+    @include t80-shadow();
+    padding: var(--space-2);
+
+    &:hover {
+        @include t80-shadow(3px, 3px);
+        transform: translate(-1px, -1px);
+    }
+}
+
+@mixin t80-input() {
+    @include t80-text();
+    padding: var(--space-1);
+    background: var(--color-surface);
+    color: var(--color-text);
+    @include t80-border();
+
+    &:focus {
+        @include t80-border(var(--color-primary));
+        @include t80-glow(var(--color-primary), 4px);
+        outline: none;
+    }
+
+    &::placeholder {
+        color: var(--color-text-muted);
+    }
+}
+
+@mixin t80-panel() {
+    background: var(--color-surface);
+    @include t80-border();
+    @include t80-shadow();
+
+    &--inset {
+        @include t80-inset-border();
+        background: var(--color-background);
+    }
+
+    &--raised {
+        @include t80-shadow(4px, 4px);
+        background: var(--color-surface-light);
+    }
+}
+
+// ================================
+// 🎯 UTILITY MIXINS
+// ================================
+
+@mixin t80-screen-reader-only() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@mixin t80-pixel-perfect() {
+    image-rendering: var(--image-rendering);
+    image-rendering: var(--image-rendering-fallback);
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+@mixin t80-no-select() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin t80-clickable() {
+    cursor: pointer;
+    @include t80-hover-lift();
+}
+
+// ================================
+// 📱 RESPONSIVE MIXINS
+// ================================
+
+@mixin t80-responsive($breakpoint) {
+    @if $breakpoint =='xs' {
+        @media (min-width: var(--breakpoint-xs)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='sm' {
+        @media (min-width: var(--breakpoint-sm)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='md' {
+        @media (min-width: var(--breakpoint-md)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='lg' {
+        @media (min-width: var(--breakpoint-lg)) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='xl' {
+        @media (min-width: var(--breakpoint-xl)) {
+            @content;
+        }
+    }
+}
+
+@mixin t80-grid-responsive() {
+    @include t80-grid(30); // 240px / 8px = 30 columns
+
+    @include t80-responsive('sm') {
+        @include t80-grid(60); // 2x scale
+    }
+
+    @include t80-responsive('md') {
+        @include t80-grid(90); // 3x scale
+    }
+
+    @include t80-responsive('lg') {
+        @include t80-grid(120); // 4x scale
+    }
+
+    @include t80-responsive('xl') {
+        @include t80-grid(150); // 5x scale
+    }
+}

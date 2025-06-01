@@ -1,0 +1,169 @@
+<!-- Retro JavaScript Effects -->
+<script>
+    // 🌟 Starfield Background Effect
+    function createStarfield() {
+        const starfield = document.createElement('div');
+        starfield.className = 'p8-starfield';
+        starfield.setAttribute('aria-hidden', 'true');
+
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'p8-star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            starfield.appendChild(star);
+        }
+
+        document.body.appendChild(starfield);
+    }
+
+    // 🎮 PICO-8 Color Cycling
+    function initColorCycling() {
+        const elements = document.querySelectorAll('.p8-color-cycle');
+        const colors = ['#ff004d', '#ffa300', '#ffec27', '#00e436', '#29adff', '#83769c', '#ff77a8'];
+
+        elements.forEach((el, index) => {
+            let colorIndex = 0;
+            setInterval(() => {
+                el.style.color = colors[colorIndex];
+                colorIndex = (colorIndex + 1) % colors.length;
+            }, 1000 + (index * 200));
+        });
+    }
+
+    // 📊 Visitor Counter Animation
+    function animateCounter() {
+        const counter = document.querySelector('.p8-counter-number');
+        if (counter) {
+            const finalValue = counter.textContent;
+            let currentValue = 0;
+            const increment = Math.ceil(parseInt(finalValue) / 50);
+
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= parseInt(finalValue)) {
+                    counter.textContent = finalValue;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = currentValue.toString().padStart(6, '0');
+                }
+            }, 50);
+        }
+    }
+
+    // 🎵 Optional PICO-8 Sound Effects
+    function playPixelSound(frequency = 440, duration = 100) {
+        if (typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined') {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            oscillator.frequency.value = frequency;
+            oscillator.type = 'square';
+
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration / 1000);
+
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration / 1000);
+        }
+    }
+
+    // 🚀 Initialize all effects when DOM loads
+    document.addEventListener('DOMContentLoaded', function () {
+        // Add starfield background
+        createStarfield();
+
+        // Initialize color cycling
+        initColorCycling();
+
+        // Animate visitor counter
+        setTimeout(animateCounter, 500);
+
+        // Add sound effects to navigation links
+        document.querySelectorAll('.p8-nav-link, .p8-button').forEach(link => {
+            link.addEventListener('mouseenter', () => playPixelSound(880, 50));
+            link.addEventListener('click', () => playPixelSound(1320, 100));
+        });
+
+        // Log retro greeting
+        console.log('🎮 Welcome to the PICO-8 Web! Press F12 for dev tools.');
+        console.log('🌟 Neocities Revival Theme loaded successfully!');
+    });
+</script>
+
+<!-- CSS for JavaScript effects -->
+<style>
+    .p8-starfield {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .p8-star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: var(--p8-white);
+        border-radius: 50%;
+        animation: twinkle 2s infinite;
+    }
+
+    @keyframes twinkle {
+
+        0%,
+        100% {
+            opacity: 0.3;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .p8-color-cycle {
+        animation: colorCycle 7s infinite;
+    }
+
+    @keyframes colorCycle {
+        0% {
+            color: var(--p8-red);
+        }
+
+        14% {
+            color: var(--p8-orange);
+        }
+
+        28% {
+            color: var(--p8-yellow);
+        }
+
+        42% {
+            color: var(--p8-green);
+        }
+
+        57% {
+            color: var(--p8-blue);
+        }
+
+        71% {
+            color: var(--p8-indigo);
+        }
+
+        85% {
+            color: var(--p8-pink);
+        }
+
+        100% {
+            color: var(--p8-red);
+        }
+    }
+</style>

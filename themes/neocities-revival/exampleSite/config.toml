@@ -1,18 +1,13 @@
-baseURL = "https://spurlin.dev"
+baseURL = "https://example.com"
 languageCode = "en-us"
-title = "spurlin.dev"
+title = "PICO-8 Web"
 theme = "neocities-revival"
-
-# Content organization
-paginate = 10
-enableRobotsTXT = true
-enableGitInfo = true
 
 # Site parameters
 [params]
   # Basic Info
   author = "Matt Spurlin"
-  description = "Welcome to the retro web! Developer, designer, and PICO-8 enthusiast building pixel-perfect experiences."
+  description = "Welcome to the retro web! A nostalgic journey through 90s aesthetics with modern PICO-8 design."
   
   # Retro Features
   visitorCount = "001337"
@@ -24,7 +19,7 @@ enableGitInfo = true
   enableSoundEffects = true
   showStarfield = true
 
-# Menu configuration
+# Navigation menu
 [[menu.main]]
   name = "Home"
   url = "/"
@@ -48,10 +43,10 @@ enableGitInfo = true
 # Markup configuration
 [markup]
   [markup.goldmark]
-    [markup.renderer]
+    [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]
-    style = "github-dark"
+    style = "github"
     lineNos = true
     codeFences = true
 
@@ -59,13 +54,4 @@ enableGitInfo = true
 [taxonomies]
   tag = "tags"
   category = "categories"
-  series = "series"
-
-# Privacy settings
-[privacy]
-  [privacy.twitter]
-    disable = false
-    enableDNT = true
-  [privacy.youtube]
-    disable = false
-    privacyEnhanced = true
+  series = "series" 

@@ -1,0 +1,33 @@
+/* 🎮 PICO-8 Design System - Main Entry Point
+ * "16 colors. Infinite possibilities."
+ * 
+ * A fantasy console design system for the modern web.
+ * Bringing PICO-8's beautiful constraints to Hugo sites.
+ */
+
+// ================================
+// 📋 IMPORT ORDER MATTERS!
+// ================================
+// 1. Variables first (colors, spacing, etc.)
+// 2. Mixins second (reusable patterns)
+// 3. Components last (actual styles)
+
+@import 'variables';
+@import 'mixins';
+@import 'components';
+
+/* 🎮 Welcome to the PICO-8 Web!
+ * 
+ * This design system brings the magic of PICO-8's
+ * fantasy console aesthetic to the web. Every pixel
+ * matters, every color has meaning, and constraints
+ * spark infinite creativity.
+ * 
+ * Usage:
+ * - Use .p8-* classes for components
+ * - Stick to the 16 sacred colors
+ * - Everything on 8px grid
+ * - Embrace the pixel aesthetic
+ * 
+ * May your websites be as memorable as PICO-8 games! 🕹️
+ */
