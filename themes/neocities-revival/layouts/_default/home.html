@@ -1,0 +1,56 @@
+{{ define "main" }}
+<div class="t80-home-page">
+    <header class="t80-home-header">
+        <h1 class="t80-home-title">{{ .Site.Title }}</h1>
+        {{ if .Site.Params.description }}
+        <p class="t80-home-description">{{ .Site.Params.description }}</p>
+        {{ end }}
+    </header>
+
+    {{ if .Content }}
+    <div class="t80-home-content">
+        {{ .Content }}
+    </div>
+    {{ end }}
+
+    {{ if site.RegularPages }}
+    <section class="t80-recent-posts">
+        <h2 class="t80-section-title">🎮 Recent Posts</h2>
+        <div class="t80-post-grid">
+            {{ range first 6 site.RegularPages }}
+            <article class="t80-post-card">
+                <header class="t80-post-card-header">
+                    <h3 class="t80-post-card-title">
+                        <a href="{{ .RelPermalink }}" class="t80-post-card-link">{{ .LinkTitle }}</a>
+                    </h3>
+                    {{ if .Date }}
+                    <time class="t80-post-card-date" datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">
+                        📅 {{ .Date.Format "Jan 2, 2006" }}
+                    </time>
+                    {{ end }}
+                </header>
+                {{ if .Summary }}
+                <div class="t80-post-card-summary">
+                    {{ .Summary }}
+                </div>
+                {{ end }}
+                {{ if .Params.tags }}
+                <div class="t80-post-card-tags">
+                    {{ range first 3 .Params.tags }}
+                    <span class="t80-tag">#{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+
+        {{ if gt (len site.RegularPages) 6 }}
+        <div class="t80-home-more">
+            <a href="/blog/" class="t80-button t80-button-primary">View All Posts →</a>
+        </div>
+        {{ end }}
+    </section>
+    {{ end }}
+</div>
+{{ end }}

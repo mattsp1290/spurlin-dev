@@ -1,0 +1,53 @@
+{{ define "main" }}
+<div class="t80-taxonomy-page">
+    <header class="t80-taxonomy-header">
+        <h1 class="t80-taxonomy-title">{{ .Title }}</h1>
+        {{ if .Description }}
+        <p class="t80-taxonomy-description">{{ .Description }}</p>
+        {{ end }}
+
+        <div class="t80-taxonomy-meta">
+            📂 {{ len .Pages }} {{ if eq (len .Pages) 1 }}item{{ else }}items{{ end }}
+        </div>
+    </header>
+
+    {{ if .Content }}
+    <div class="t80-taxonomy-content">
+        {{ .Content }}
+    </div>
+    {{ end }}
+
+    {{ if .Pages }}
+    <div class="t80-taxonomy-list">
+        {{ range .Pages }}
+        <article class="t80-taxonomy-item">
+            <header class="t80-taxonomy-item-header">
+                <h2 class="t80-taxonomy-item-title">
+                    <a href="{{ .RelPermalink }}" class="t80-taxonomy-item-link">{{ .LinkTitle }}</a>
+                </h2>
+                {{ if .Date }}
+                <time class="t80-taxonomy-item-date" datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">
+                    📅 {{ .Date.Format "Jan 2, 2006" }}
+                </time>
+                {{ end }}
+            </header>
+
+            {{ if .Summary }}
+            <div class="t80-taxonomy-item-summary">
+                {{ .Summary }}
+            </div>
+            {{ end }}
+
+            {{ if .Params.tags }}
+            <div class="t80-taxonomy-item-tags">
+                {{ range .Params.tags }}
+                <span class="t80-tag">#{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}

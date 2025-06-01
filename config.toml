@@ -4,22 +4,28 @@ title = "spurlin.dev"
 theme = "neocities-revival"
 
 # Content organization
-paginate = 10
 enableRobotsTXT = true
 enableGitInfo = true
+
+# Pagination
+[pagination]
+  pagerSize = 10
+
+# Suppress warnings
+ignoreLogs = ['warning-goldmark-raw-html']
 
 # Site parameters
 [params]
   # Basic Info
   author = "Matt Spurlin"
-  description = "Welcome to the retro web! Developer, designer, and PICO-8 enthusiast building pixel-perfect experiences."
+  description = "Welcome to the retro web! Developer, designer, and TIC-80 enthusiast building pixel-perfect experiences with the SWEETIE-16 palette."
   
   # Retro Features
   visitorCount = "001337"
   underConstruction = false
   enableGuestbook = false
   
-  # PICO-8 Customization
+  # TIC-80 Customization
   pixelPerfect = true
   enableSoundEffects = true
   showStarfield = true
@@ -63,7 +69,7 @@ enableGitInfo = true
 
 # Privacy settings
 [privacy]
-  [privacy.twitter]
+  [privacy.x]
     disable = false
     enableDNT = true
   [privacy.youtube]

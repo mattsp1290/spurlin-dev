@@ -3,12 +3,12 @@
     // 🌟 Starfield Background Effect
     function createStarfield() {
         const starfield = document.createElement('div');
-        starfield.className = 'p8-starfield';
+        starfield.className = 't80-starfield';
         starfield.setAttribute('aria-hidden', 'true');
 
         for (let i = 0; i < 50; i++) {
             const star = document.createElement('div');
-            star.className = 'p8-star';
+            star.className = 't80-star';
             star.style.left = Math.random() * 100 + '%';
             star.style.top = Math.random() * 100 + '%';
             star.style.animationDelay = Math.random() * 2 + 's';
@@ -18,10 +18,10 @@
         document.body.appendChild(starfield);
     }
 
-    // 🎮 PICO-8 Color Cycling
+    // 🎮 TIC-80 Color Cycling (SWEETIE-16 palette)
     function initColorCycling() {
-        const elements = document.querySelectorAll('.p8-color-cycle');
-        const colors = ['#ff004d', '#ffa300', '#ffec27', '#00e436', '#29adff', '#83769c', '#ff77a8'];
+        const elements = document.querySelectorAll('.t80-color-cycle');
+        const colors = ['#a7f070', '#73eff7', '#ffcd75', '#f77622', '#d62411', '#8b956d', '#4a4a4a'];
 
         elements.forEach((el, index) => {
             let colorIndex = 0;
@@ -34,7 +34,7 @@
 
     // 📊 Visitor Counter Animation
     function animateCounter() {
-        const counter = document.querySelector('.p8-counter-number');
+        const counter = document.querySelector('.t80-counter-number');
         if (counter) {
             const finalValue = counter.textContent;
             let currentValue = 0;
@@ -52,7 +52,7 @@
         }
     }
 
-    // 🎵 Optional PICO-8 Sound Effects
+    // 🎵 Optional TIC-80 Sound Effects
     function playPixelSound(frequency = 440, duration = 100) {
         if (typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined') {
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -85,20 +85,20 @@
         setTimeout(animateCounter, 500);
 
         // Add sound effects to navigation links
-        document.querySelectorAll('.p8-nav-link, .p8-button').forEach(link => {
+        document.querySelectorAll('.t80-nav-link, .t80-button').forEach(link => {
             link.addEventListener('mouseenter', () => playPixelSound(880, 50));
             link.addEventListener('click', () => playPixelSound(1320, 100));
         });
 
         // Log retro greeting
-        console.log('🎮 Welcome to the PICO-8 Web! Press F12 for dev tools.');
+        console.log('🎮 Welcome to the TIC-80 Web! Press F12 for dev tools.');
         console.log('🌟 Neocities Revival Theme loaded successfully!');
     });
 </script>
 
 <!-- CSS for JavaScript effects -->
 <style>
-    .p8-starfield {
+    .t80-starfield {
         position: fixed;
         top: 0;
         left: 0;
@@ -108,11 +108,11 @@
         z-index: -1;
     }
 
-    .p8-star {
+    .t80-star {
         position: absolute;
         width: 2px;
         height: 2px;
-        background: var(--p8-white);
+        background: var(--t80-white);
         border-radius: 50%;
         animation: twinkle 2s infinite;
     }
@@ -129,41 +129,41 @@
         }
     }
 
-    .p8-color-cycle {
+    .t80-color-cycle {
         animation: colorCycle 7s infinite;
     }
 
     @keyframes colorCycle {
         0% {
-            color: var(--p8-red);
+            color: var(--t80-lime);
         }
 
         14% {
-            color: var(--p8-orange);
+            color: var(--t80-cyan);
         }
 
         28% {
-            color: var(--p8-yellow);
+            color: var(--t80-yellow);
         }
 
         42% {
-            color: var(--p8-green);
+            color: var(--t80-orange);
         }
 
         57% {
-            color: var(--p8-blue);
+            color: var(--t80-red);
         }
 
         71% {
-            color: var(--p8-indigo);
+            color: var(--t80-green);
         }
 
         85% {
-            color: var(--p8-pink);
+            color: var(--t80-gray);
         }
 
         100% {
-            color: var(--p8-red);
+            color: var(--t80-lime);
         }
     }
 </style>

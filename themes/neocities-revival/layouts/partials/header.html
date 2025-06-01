@@ -1,33 +1,33 @@
-<header class="p8-header">
-    <div class="p8-container">
-        <nav class="p8-nav">
-            <!-- Site Title with PICO-8 aesthetic -->
-            <div class="p8-nav-brand">
-                <a href="{{ .Site.BaseURL }}" class="p8-nav-logo">
-                    <span class="p8-pixel-text">{{ .Site.Title }}</span>
+<header class="t80-header">
+    <div class="t80-container">
+        <nav class="t80-nav">
+            <!-- Site Title with TIC-80 aesthetic -->
+            <div class="t80-nav-brand">
+                <a href="{{ .Site.BaseURL }}" class="t80-nav-logo">
+                    <span class="t80-pixel-text">{{ .Site.Title }}</span>
                 </a>
             </div>
 
             <!-- Navigation Menu -->
-            <div class="p8-nav-menu">
-                <ul class="p8-nav-list">
-                    <li class="p8-nav-item">
-                        <a href="{{ .Site.BaseURL }}" class="p8-nav-link {{ if .IsHome }}p8-active{{ end }}">
+            <div class="t80-nav-menu">
+                <ul class="t80-nav-list">
+                    <li class="t80-nav-item">
+                        <a href="{{ .Site.BaseURL }}" class="t80-nav-link {{ if .IsHome }}t80-active{{ end }}">
                             Home
                         </a>
                     </li>
-                    <li class="p8-nav-item">
-                        <a href="/blog/" class="p8-nav-link {{ if eq .Section " blog" }}p8-active{{ end }}">
+                    <li class="t80-nav-item">
+                        <a href="/blog/" class="t80-nav-link {{ if eq .Section " blog" }}t80-active{{ end }}">
                             Blog
                         </a>
                     </li>
-                    <li class="p8-nav-item">
-                        <a href="/projects/" class="p8-nav-link {{ if eq .Section " projects" }}p8-active{{ end }}">
+                    <li class="t80-nav-item">
+                        <a href="/projects/" class="t80-nav-link {{ if eq .Section " projects" }}t80-active{{ end }}">
                             Projects
                         </a>
                     </li>
-                    <li class="p8-nav-item">
-                        <a href="/about/" class="p8-nav-link {{ if eq .Title " About" }}p8-active{{ end }}">
+                    <li class="t80-nav-item">
+                        <a href="/about/" class="t80-nav-link {{ if eq .Title " About" }}t80-active{{ end }}">
                             About
                         </a>
                     </li>
@@ -35,8 +35,8 @@
             </div>
 
             <!-- Retro Web Badge -->
-            <div class="p8-nav-badge">
-                <img src="/images/badges/made-with-pico8.gif" alt="Made with PICO-8" class="p8-badge">
+            <div class="t80-nav-badge">
+                <img src="/images/badges/made-with-tic80.gif" alt="Made with TIC-80" class="t80-badge">
             </div>
         </nav>
     </div>
