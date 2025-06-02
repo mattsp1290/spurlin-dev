@@ -1,0 +1,43 @@
+{
+  "type": "info",
+  "lastLine": 193,
+  "lastColumn": 63,
+  "firstColumn": 21,
+  "subType": "warning",
+  "message": "Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).",
+  "extract": "          <h1 id=\"-about-this-tic-80-web-experience\">🎮 Abo",
+  "hiliteStart": 10,
+  "hiliteLength": 43
+}
+{
+  "type": "info",
+  "lastLine": 303,
+  "lastColumn": 51,
+  "firstColumn": 21,
+  "subType": "warning",
+  "message": "Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).",
+  "extract": "          <h1 id=\"-tic-80-design-system\">🎮 TIC",
+  "hiliteStart": 10,
+  "hiliteLength": 31
+}
+{
+  "type": "info",
+  "lastLine": 326,
+  "lastColumn": 28,
+  "firstColumn": 1,
+  "subType": "warning",
+  "message": "Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools).",
+  "extract": "ings</h3>\n<h1 class=\"t80-heading--h1\">Level ",
+  "hiliteStart": 10,
+  "hiliteLength": 28
+}
+{
+  "type": "error",
+  "lastLine": 485,
+  "lastColumn": 7,
+  "firstColumn": 1,
+  "message": "Element “style” not allowed as child of element “body” in this context. (Suppressing further errors from this subtree.)",
+  "extract": "script>\n\n\n<style>\n    .",
+  "hiliteStart": 10,
+  "hiliteLength": 7
+}

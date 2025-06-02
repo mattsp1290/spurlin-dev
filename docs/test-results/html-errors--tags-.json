@@ -1,0 +1,10 @@
+{
+  "type": "error",
+  "lastLine": 325,
+  "lastColumn": 7,
+  "firstColumn": 1,
+  "message": "Element “style” not allowed as child of element “body” in this context. (Suppressing further errors from this subtree.)",
+  "extract": "script>\n\n\n<style>\n    .",
+  "hiliteStart": 10,
+  "hiliteLength": 7
+}

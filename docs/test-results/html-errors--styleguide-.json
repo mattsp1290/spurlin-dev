@@ -1,0 +1,483 @@
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 25,
+  "message": "CSS: The @charset rule may only occur at the start of the style sheet. Please check that there are no spaces before it.",
+  "extract": "charset \"UTF-8\";:root{--t80-bl",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 2942,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 3091,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-ms-interpola",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 3514,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 3736,
+  "message": "CSS: Parse Error.",
+  "extract": "var(--t80-lime)}.t80-heading--",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 3939,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 4263,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 4588,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 4898,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 5359,
+  "message": "CSS: Parse Error.",
+  "extract": "var(--t80-lime)}.t80-ascii{fon",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 5553,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 5816,
+  "message": "CSS: Parse Error.",
+  "extract": "-color-primary);letter-spacing",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 5836,
+  "message": "CSS: Parse Error.",
+  "extract": "er-spacing:.1em;margin:var(--s",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 5859,
+  "message": "CSS: Parse Error.",
+  "extract": "var(--space-2)0}.t80-ascii--bl",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 6378,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 6932,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 8041,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 9188,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 10344,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 11661,
+  "message": "CSS: “box-shadow”: “var(--t80-lime)” is not a valid color 3 or 6 hexadecimals numbers.",
+  "extract": "(--t80-lime),.2)}.t80-btn--pul",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 12712,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 13594,
+  "message": "CSS: “box-shadow”: “var(--t80-lime)” is not a valid color 3 or 6 hexadecimals numbers.",
+  "extract": "(--t80-lime),.2)}.t80-card--in",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 13980,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 14535,
+  "message": "CSS: Parse Error.",
+  "extract": "-color-primary);outline:none}.",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 14547,
+  "firstColumn": 14544,
+  "message": "CSS: Unknown pseudo-element or pseudo-class “:none”",
+  "extract": ");outline:none}.t80-",
+  "hiliteStart": 10,
+  "hiliteLength": 4
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 14548,
+  "message": "CSS: Parse Error.",
+  "extract": "y);outline:none}.t80-input::pl",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 16202,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 16791,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 17104,
+  "message": "CSS: Parse Error.",
+  "extract": "-color-primary)}.t80-nav__link",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 17423,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 17960,
+  "message": "CSS: Parse Error.",
+  "extract": "-color-primary)}.t80-nav__link",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 18544,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 19265,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-webkit-font-",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 20005,
+  "message": "CSS: Parse Error.",
+  "extract": "var(--t80-lime)}.t80-container",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 20279,
+  "message": "CSS: Parse Error.",
+  "extract": "pace-1));gap:0}}@media(min-wid",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 20396,
+  "message": "CSS: Parse Error.",
+  "extract": "pace-1));gap:0}}@media(min-wid",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 20514,
+  "message": "CSS: Parse Error.",
+  "extract": "pace-1));gap:0}}@media(min-wid",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 20632,
+  "message": "CSS: Parse Error.",
+  "extract": "pace-1));gap:0}}.t80-stack{dis",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 21764,
+  "message": "CSS: Parse Error.",
+  "extract": "var(--t80-lime)}.t80-glow--pri",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 21926,
+  "message": "CSS: Parse Error.",
+  "extract": "-color-primary)}.t80-glow--sec",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 22096,
+  "message": "CSS: Parse Error.",
+  "extract": "olor-secondary)}.t80-glow--acc",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 22254,
+  "message": "CSS: Parse Error.",
+  "extract": "--color-accent)}.t80-glow--dan",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 22412,
+  "message": "CSS: Parse Error.",
+  "extract": "--color-danger)}.t80-pulse{ani",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 23483,
+  "message": "CSS: “transform”: Parse Error.",
+  "extract": "-var(--space-1))}}.t80-hover-l",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 28964,
+  "message": "CSS: “image-rendering”: “var(--image-rendering-fallback)” is not a “image-rendering” value.",
+  "extract": "dering-fallback);-ms-interpola",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 29745,
+  "message": "CSS: “transform”: Parse Error.",
+  "extract": "-var(--space-1))}}@keyframes t",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 30047,
+  "message": "CSS: “transform”: Parse Error.",
+  "extract": "-var(--space-3))}70%{transform",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 30089,
+  "message": "CSS: “transform”: Parse Error.",
+  "extract": "-var(--space-1))}90%{transform",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 13,
+  "lastColumn": 30131,
+  "message": "CSS: “transform”: Parse Error.",
+  "extract": "-var(--space-1))}}\n    </style",
+  "hiliteStart": 15,
+  "hiliteLength": 1
+}
+{
+  "type": "error",
+  "lastLine": 46,
+  "lastColumn": 48,
+  "firstColumn": 1,
+  "message": "CSS: “color”: “ZgotmplZ” is not a “color” value.",
+  "extract": "\n\n\n\n\n\n\n\n\n\n<span style=\"color: ZgotmplZ;\" class=\"t80-glow\">SPURLI",
+  "hiliteStart": 10,
+  "hiliteLength": 48
+}
+{
+  "type": "info",
+  "lastLine": 75,
+  "lastColumn": 35,
+  "firstColumn": 9,
+  "subType": "warning",
+  "message": "Article lacks heading. Consider using “h2”-“h6” elements to add identifying headings to all articles.",
+  "extract": " \n        <article class=\"t80-stack\">\n     ",
+  "hiliteStart": 10,
+  "hiliteLength": 27
+}
+{
+  "type": "error",
+  "lastLine": 95,
+  "lastColumn": 40,
+  "firstColumn": 1,
+  "message": "CSS: “color”: “ZgotmplZ” is not a “color” value.",
+  "extract": "\n\n\n\n\n\n\n\n\n\n<span style=\"color: ZgotmplZ;\" class=\"\">♥</spa",
+  "hiliteStart": 10,
+  "hiliteLength": 40
+}
+{
+  "type": "error",
+  "lastLine": 112,
+  "lastColumn": 40,
+  "firstColumn": 1,
+  "message": "CSS: “color”: “ZgotmplZ” is not a “color” value.",
+  "extract": "\n\n\n\n\n\n\n\n\n\n<span style=\"color: ZgotmplZ;\" class=\"\">16 col",
+  "hiliteStart": 10,
+  "hiliteLength": 40
+}
