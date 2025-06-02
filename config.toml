@@ -54,7 +54,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
 # Markup configuration
 [markup]
   [markup.goldmark]
-    [markup.renderer]
+    [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]
     style = "github-dark"

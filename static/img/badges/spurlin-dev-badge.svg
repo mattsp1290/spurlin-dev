@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 31" width="88" height="31">
+  <!-- Background with TIC-80 dark blue -->
+  <rect width="88" height="31" fill="#29366f"/>
+  
+  <!-- Border in light blue -->
+  <rect x="0" y="0" width="88" height="1" fill="#41a6f6"/>
+  <rect x="0" y="30" width="88" height="1" fill="#41a6f6"/>
+  <rect x="0" y="0" width="1" height="31" fill="#41a6f6"/>
+  <rect x="87" y="0" width="1" height="31" fill="#41a6f6"/>
+  
+  <!-- Inner border shadow -->
+  <rect x="1" y="1" width="86" height="1" fill="#3b5dc9"/>
+  <rect x="1" y="1" width="1" height="29" fill="#3b5dc9"/>
+  
+  <!-- Text background strip -->
+  <rect x="2" y="10" width="84" height="11" fill="#1a1c2c"/>
+  
+  <!-- "spurlin.dev" text in pixel font style -->
+  <!-- 's' at x=5 -->
+  <rect x="5" y="13" width="4" height="1" fill="#ffd93d"/>
+  <rect x="5" y="14" width="1" height="1" fill="#ffd93d"/>
+  <rect x="5" y="15" width="3" height="1" fill="#ffd93d"/>
+  <rect x="8" y="16" width="1" height="1" fill="#ffd93d"/>
+  <rect x="5" y="17" width="4" height="1" fill="#ffd93d"/>
+  
+  <!-- 'p' at x=11 -->
+  <rect x="11" y="13" width="1" height="5" fill="#ffd93d"/>
+  <rect x="12" y="13" width="3" height="1" fill="#ffd93d"/>
+  <rect x="14" y="14" width="1" height="1" fill="#ffd93d"/>
+  <rect x="12" y="15" width="3" height="1" fill="#ffd93d"/>
+  
+  <!-- 'u' at x=17 -->
+  <rect x="17" y="13" width="1" height="4" fill="#ffd93d"/>
+  <rect x="20" y="13" width="1" height="4" fill="#ffd93d"/>
+  <rect x="18" y="17" width="3" height="1" fill="#ffd93d"/>
+  
+  <!-- 'r' at x=23 -->
+  <rect x="23" y="13" width="1" height="5" fill="#ffd93d"/>
+  <rect x="24" y="13" width="3" height="1" fill="#ffd93d"/>
+  <rect x="26" y="14" width="1" height="1" fill="#ffd93d"/>
+  
+  <!-- 'l' at x=29 -->
+  <rect x="29" y="13" width="1" height="5" fill="#ffd93d"/>
+  
+  <!-- 'i' at x=32 -->
+  <rect x="32" y="13" width="1" height="1" fill="#ffd93d"/>
+  <rect x="32" y="15" width="1" height="3" fill="#ffd93d"/>
+  
+  <!-- 'n' at x=35 -->
+  <rect x="35" y="13" width="1" height="5" fill="#ffd93d"/>
+  <rect x="36" y="13" width="3" height="1" fill="#ffd93d"/>
+  <rect x="38" y="14" width="1" height="4" fill="#ffd93d"/>
+  
+  <!-- '.' at x=41 -->
+  <rect x="41" y="17" width="1" height="1" fill="#73eff7"/>
+  
+  <!-- 'd' at x=44 -->
+  <rect x="47" y="13" width="1" height="5" fill="#ffd93d"/>
+  <rect x="44" y="13" width="3" height="1" fill="#ffd93d"/>
+  <rect x="44" y="14" width="1" height="3" fill="#ffd93d"/>
+  <rect x="44" y="17" width="3" height="1" fill="#ffd93d"/>
+  
+  <!-- 'e' at x=50 -->
+  <rect x="50" y="13" width="4" height="1" fill="#ffd93d"/>
+  <rect x="50" y="14" width="1" height="3" fill="#ffd93d"/>
+  <rect x="50" y="15" width="3" height="1" fill="#ffd93d"/>
+  <rect x="50" y="17" width="4" height="1" fill="#ffd93d"/>
+  
+  <!-- 'v' at x=56 -->
+  <rect x="56" y="13" width="1" height="3" fill="#ffd93d"/>
+  <rect x="59" y="13" width="1" height="3" fill="#ffd93d"/>
+  <rect x="57" y="16" width="1" height="1" fill="#ffd93d"/>
+  <rect x="58" y="17" width="1" height="1" fill="#ffd93d"/>
+  
+  <!-- Decorative pixels -->
+  <rect x="65" y="14" width="1" height="1" fill="#a7f070"/>
+  <rect x="67" y="15" width="1" height="1" fill="#ef7d57"/>
+  <rect x="66" y="16" width="1" height="1" fill="#b13e53"/>
+  
+  <!-- Mini TIC-80 icon at right -->
+  <rect x="72" y="13" width="5" height="5" fill="#1a1c2c"/>
+  <rect x="73" y="14" width="3" height="3" fill="#41a6f6"/>
+  <rect x="74" y="15" width="1" height="1" fill="#f4f4f4"/>
+</svg> 
